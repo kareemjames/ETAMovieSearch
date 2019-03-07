@@ -5,8 +5,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 @Component
-public class MovieService {
-    public MovieDetails fetchMovieData() {
+public class MovieDetailsService {
+    public MovieDetails fetchMovieDetails() {
         RestTemplate restTemplate = new RestTemplate();
 
         return restTemplate.getForObject("http://www.omdbapi.com/?t=batman&apikey=ea8e0e57", MovieDetails.class);
