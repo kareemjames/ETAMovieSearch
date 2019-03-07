@@ -1,6 +1,6 @@
 package com.detroitlabs.moviesearch.controller;
 
-import com.detroitlabs.moviesearch.model.Movie;
+import com.detroitlabs.moviesearch.model.MovieDetails;
 import com.detroitlabs.moviesearch.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,7 +16,7 @@ public class MovieController {
     @ResponseBody
     @RequestMapping("/")
     public String displayMovie() {
-        Movie movie = movieService.fetchMovieData();
+        MovieDetails movie = movieService.fetchMovieData();
         return "This is the movie " + movie;
 
     }
