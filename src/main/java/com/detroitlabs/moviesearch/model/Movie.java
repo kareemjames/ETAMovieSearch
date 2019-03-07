@@ -1,138 +1,191 @@
 package com.detroitlabs.moviesearch.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Movie {
 
-    private String Title;
-    private String Year;
-    private String Rated;
-    private String Released;
-    private String Runtime;
-    private String Genre;
-    private String Director;
-    private String Writer;
-    private String Actors;
-    private String Plot;
-    private String Language;
-    private String Country;
-    private String Awards;
-    private String Metascore;
+
+    private String title;
+    private String year;
+    private String rated;
+    private String released;
+    private String runtime;
+    private String genre;
+    private String director;
+    private String writer;
+    private String actors;
+    private String plot;
+    private String language;
+    private String country;
+    private String awards;
+    private String metascore;
     private String imdbRating;
     private String imdbID;
-    private String Type;
+    private String type;
 
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "title='" + title + '\'' +
+                ", year='" + year + '\'' +
+                ", rated='" + rated + '\'' +
+                ", released='" + released + '\'' +
+                ", runtime='" + runtime + '\'' +
+                ", genre='" + genre + '\'' +
+                ", director='" + director + '\'' +
+                ", writer='" + writer + '\'' +
+                ", actors='" + actors + '\'' +
+                ", plot='" + plot + '\'' +
+                ", language='" + language + '\'' +
+                ", country='" + country + '\'' +
+                ", awards='" + awards + '\'' +
+                ", metascore='" + metascore + '\'' +
+                ", imdbRating='" + imdbRating + '\'' +
+                ", imdbID='" + imdbID + '\'' +
+                ", type='" + type + '\'' +
+                '}';
+    }
+
+    @JsonProperty("Title")
     public String getTitle() {
-        return Title;
+        return title;
     }
 
+    @JsonProperty("Title")
     public void setTitle(String title) {
-        Title = title;
+        this.title = title;
     }
 
+    @JsonProperty("Year")
     public String getYear() {
-        return Year;
+        return year;
     }
 
+    @JsonProperty("Year")
     public void setYear(String year) {
-        Year = year;
+        this.year = year;
     }
 
+    @JsonProperty("Rated")
     public String getRated() {
-        return Rated;
+        return rated;
     }
 
+    @JsonProperty("Rated")
     public void setRated(String rated) {
-        Rated = rated;
+        this.rated = rated;
     }
 
+    @JsonProperty("Released")
     public String getReleased() {
-        return Released;
+        return released;
     }
 
+    @JsonProperty("Released")
     public void setReleased(String released) {
-        Released = released;
+        this.released = released;
     }
 
+    @JsonProperty("Runtime")
     public String getRuntime() {
-        return Runtime;
+        return runtime;
     }
 
+    @JsonProperty("Runtime")
     public void setRuntime(String runtime) {
-        Runtime = runtime;
+        this.runtime = runtime;
     }
 
+    @JsonProperty("Genre")
     public String getGenre() {
-        return Genre;
+        return genre;
     }
 
+    @JsonProperty("Genre")
     public void setGenre(String genre) {
-        Genre = genre;
+        this.genre = genre;
     }
 
+    @JsonProperty("Director")
     public String getDirector() {
-        return Director;
+        return director;
     }
 
+    @JsonProperty("Director")
     public void setDirector(String director) {
-        Director = director;
+        this.director = director;
     }
 
+    @JsonProperty("Writer")
     public String getWriter() {
-        return Writer;
+        return writer;
     }
 
+    @JsonProperty("Writer")
     public void setWriter(String writer) {
-        Writer = writer;
+        this.writer = writer;
     }
 
+    @JsonProperty("Actors")
     public String getActors() {
-        return Actors;
+        return actors;
     }
 
+    @JsonProperty("Actors")
     public void setActors(String actors) {
-        Actors = actors;
+        this.actors = actors;
     }
 
+    @JsonProperty("Plot")
     public String getPlot() {
-        return Plot;
+        return plot;
     }
 
+    @JsonProperty("Plot")
     public void setPlot(String plot) {
-        Plot = plot;
+        this.plot = plot;
     }
 
+    @JsonProperty("Language")
     public String getLanguage() {
-        return Language;
+        return language;
     }
 
+    @JsonProperty("Language")
     public void setLanguage(String language) {
-        Language = language;
+        this.language = language;
     }
 
+    @JsonProperty("Country")
     public String getCountry() {
-        return Country;
+        return country;
     }
 
+    @JsonProperty("Country")
     public void setCountry(String country) {
-        Country = country;
+        this.country = country;
     }
 
+    @JsonProperty("Awards")
     public String getAwards() {
-        return Awards;
+        return awards;
     }
 
+    @JsonProperty("Awards")
     public void setAwards(String awards) {
-        Awards = awards;
+        this.awards = awards;
     }
 
+    @JsonProperty("Metascore")
     public String getMetascore() {
-        return Metascore;
+        return metascore;
     }
 
+    @JsonProperty("Metascore")
     public void setMetascore(String metascore) {
-        Metascore = metascore;
+        this.metascore = metascore;
     }
 
     public String getImdbRating() {
@@ -151,11 +204,13 @@ public class Movie {
         this.imdbID = imdbID;
     }
 
+    @JsonProperty("Type")
     public String getType() {
-        return Type;
+        return type;
     }
 
+    @JsonProperty("Type")
     public void setType(String type) {
-        Type = type;
+        this.type = type;
     }
 }
