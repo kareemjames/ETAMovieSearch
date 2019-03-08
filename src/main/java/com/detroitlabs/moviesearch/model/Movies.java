@@ -19,5 +19,5 @@ public class Movies {
     public void setSearch(List<MovieBasic> search) {
         this.search = search;
     }
-
+    
 }

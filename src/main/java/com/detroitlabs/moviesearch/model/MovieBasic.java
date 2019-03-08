@@ -14,13 +14,12 @@ public class MovieBasic {
 
     @Override
     public String toString() {
-        return "MovieBasic{" +
-                "title='" + title + '\'' +
-                ", year='" + year + '\'' +
-                ", imdbID='" + imdbID + '\'' +
-                ", type='" + type + '\'' +
-                ", poster='" + poster + '\'' +
-                '}';
+        return "MovieBasic " +
+                " Title: " + title +
+                " Year: " + year +
+                " ImdbID: " + imdbID +
+                " Type: " + type +
+                " Poster: " + poster;
     }
 
     @JsonProperty("Title")

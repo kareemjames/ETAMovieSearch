@@ -22,7 +22,7 @@ public class MovieController {
     @RequestMapping("/")
     public String displayListOfMovies() {
         Movies allMovies = moviesService.getAllMovies();
-        return "This is all the movies " + allMovies.getSearch().get(1).getTitle();
+        return allMovies.getSearch().toString();
     }
 
 }
