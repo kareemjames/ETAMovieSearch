@@ -1,7 +1,7 @@
 package com.detroitlabs.moviesearch.controller;
 
 import com.detroitlabs.moviesearch.model.MovieDetails;
-import com.detroitlabs.moviesearch.model.Movies;
+import com.detroitlabs.moviesearch.model.Movie;
 import com.detroitlabs.moviesearch.service.MoviesService;
 import com.detroitlabs.moviesearch.service.MovieDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,7 @@ public class MovieController {
     @ResponseBody
     @RequestMapping("/")
     public String displayListOfMovies() {
-        Movies allMovies = moviesService.getAllMovies();
+        Movie allMovies = moviesService.getAllMovies();
         return allMovies.getSearch().toString();
     }
 

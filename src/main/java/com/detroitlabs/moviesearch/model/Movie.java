@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Movies {
+public class Movie {
 
     private List<MovieBasic> search;
 
@@ -19,5 +19,5 @@ public class Movies {
     public void setSearch(List<MovieBasic> search) {
         this.search = search;
     }
-    
+
 }
