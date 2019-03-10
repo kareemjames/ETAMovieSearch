@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
     <noscript>
-        <link rel="stylesheet" href="assets/css/noscript.css"/>
+        <link rel="stylesheet" href="/static/assets/css/noscript.css"/>
     </noscript>
 </head>
 <body class="is-preload">
@@ -36,41 +36,43 @@
         <div class="inner">
             <h1>ETA Movie Search</h1>
             <p>Welcome to the free Movie Search, Type in what your looking for and check out the results.</p>
-            <section>
-                <form action="search" method="get">
-                    <div class="row gtr-uniform">
-                        <div class="col-12">
-                            <input name="q" type="search" placeholder="Movie Name">
-                        </div>
+
+            <form action="search" method="get">
+                <div class="row gtr-uniform">
+                    <div class="col-12">
+                        <input name="q" type="search" placeholder="Movie Name">
                     </div>
-                </form>
-            </section>
+                </div>
+            </form>
+
         </div>
 
         <ul class="actions">
             <li><a href="#one" class="button scrolly">Learn more</a></li>
         </ul>
-</div>
-</section>
-
-<!-- One -->
-<section th:each="movie : ${allMovies}" id="one" class="wrapper style2 spotlights">
-    <section>
-        <a href="#" class="image fit"><img th:src="@{${movie.poster}}" alt="movie poster"
-                                           data-position="center center"/></a>
-        <div class="content">
-            <div class="inner">
-                <h2 th:text="${movie.title}">Movie Title</h2>
-                <p th:text="${movie.year}">Movie Year</p>
-                <ul class="actions">
-                    <li><a th:text="${movie.title} + ' Details'" href="generic.html" class="button">Movie
-                        Details</a></li>
-                </ul>
-            </div>
-        </div>
     </section>
-</section>
+    <!-- One -->
+    <section th:each="movie : ${allMovies}" id="one" class="wrapper style2 spotlights">
+        <section>
+            <a href="#" class="image fit"><img th:src="@{${movie.poster}}" alt="movie poster"
+                                               data-position="center center"/></a>
+            <div class="content">
+                <div class="inner">
+                    <h2 th:text="${movie.title}">Movie Title</h2>
+                    <p th:text="${movie.year}">Movie Year</p>
+                    <form action="getTitle" method="get">
+                        <input type="hidden" name="title" th:value="${movie.title}"/>
+                        <ul class="actions">
+                            <li><a th:text="${movie.title} + ' Details'" href="generic.html" class="button">Movie Details</a></li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </section>
 </div>
+
+
 <!-- Footer -->
 <footer id="footer" class="wrapper style1-alt">
     <div class="inner">
