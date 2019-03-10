@@ -2,7 +2,7 @@ package com.detroitlabs.moviesearch.controller;
 
 import com.detroitlabs.moviesearch.model.MovieDetails;
 import com.detroitlabs.moviesearch.model.Movie;
-import com.detroitlabs.moviesearch.service.MoviesService;
+import com.detroitlabs.moviesearch.service.MovieService;
 import com.detroitlabs.moviesearch.service.MovieDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class MovieController {
 
     @Autowired
-    MoviesService moviesService;
+    MovieService movieService;
 
     @Autowired
     MovieDetailsService movieService;
@@ -24,7 +24,7 @@ public class MovieController {
     @ResponseBody
     @RequestMapping("/")
     public String displayListOfMovies() {
-        Movie allMovies = moviesService.getAllMovies();
+        Movie allMovies = movieService.getAllMovies();
         return allMovies.getSearch().toString();
     }
 

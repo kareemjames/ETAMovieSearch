@@ -6,12 +6,22 @@ import org.springframework.web.client.RestTemplate;
 
 
 @Component
-public class MoviesService {
+public class MovieService {
+
+    private String searchTerm;
 
     public Movie getAllMovies() {
 
         RestTemplate restTemplate = new RestTemplate();
 
         return restTemplate.getForObject("http://www.omdbapi.com/?s=batman&apikey=ea8e0e57", Movie.class);
+    }
+
+    public String getSearchTerm() {
+        return searchTerm;
+    }
+
+    public void setSearchTerm(String searchTerm) {
+        this.searchTerm = searchTerm;
     }
 }
