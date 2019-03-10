@@ -8,7 +8,7 @@ import org.springframework.web.client.RestTemplate;
 @Component
 public class MovieService {
 
-    private String searchTerm;
+    private String searchTerm = "random";
 
     public Movie getAllMovies() {
 
