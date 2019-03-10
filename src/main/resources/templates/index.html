@@ -48,7 +48,7 @@
     <!-- One -->
     <section th:each="movie : ${allMovies}" id="one" class="wrapper style2 spotlights">
         <section>
-            <a href="#" class="image"><img src="@{${movie.poster}}" alt="movie poster" data-position="center center"/></a>
+            <a href="#" class="image"><img th:src="@{${movie.poster}}" alt="movie poster" data-position="center center"/></a>
             <div class="content">
                 <div class="inner">
                     <h2 th:text="${movie.title}">Movie Title</h2>
