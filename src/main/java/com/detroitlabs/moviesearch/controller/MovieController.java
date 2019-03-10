@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
@@ -17,6 +18,8 @@ import java.util.List;
 
 @Controller
 public class MovieController {
+
+    MovieBasic movieBasic = new MovieBasic();
 
     @Autowired
     MovieService movieService;
@@ -26,7 +29,7 @@ public class MovieController {
 
     @RequestMapping("/")
     public String displayListOfMovies(ModelMap modelMap) {
-        MovieBasic movieBasic = new MovieBasic();
+
         Movie allMoviesObj = movieService.getAllMovies();
         List<MovieBasic> allMovies = allMoviesObj.getSearch();
         allMovies = movieBasic.sortMoviesByYear(allMovies);
@@ -39,6 +42,16 @@ public class MovieController {
     public String displayMovieDetails(@PathVariable String name, ModelMap modelMap) {
         MovieDetails movieDetails = movieDetailsService.fetchMovieDetails();
         return movieDetails.toString();
+    }
+
+    @RequestMapping("search")
+    public String searchByMovieTitle(@RequestParam("q") String searchValue, ModelMap modelMap) {
+        movieService.setSearchTerm(searchValue);
+        Movie allMoviesObj = movieService.getAllMovies();
+        List<MovieBasic> allMovies = allMoviesObj.getSearch();
+        allMovies = movieBasic.sortMoviesByYear(allMovies);
+        modelMap.put("allMovies", allMovies);
+        return "index";
     }
 
 }

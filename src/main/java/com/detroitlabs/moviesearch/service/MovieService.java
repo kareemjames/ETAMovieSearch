@@ -14,7 +14,7 @@ public class MovieService {
 
         RestTemplate restTemplate = new RestTemplate();
 
-        return restTemplate.getForObject("http://www.omdbapi.com/?s=batman&apikey=ea8e0e57", Movie.class);
+        return restTemplate.getForObject("http://www.omdbapi.com/?s=" + searchTerm + "&apikey=ea8e0e57", Movie.class);
     }
 
     public String getSearchTerm() {
