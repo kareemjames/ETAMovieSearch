@@ -10,6 +10,13 @@ public class Movie {
 
     private List<MovieBasic> search;
 
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "search=" + search +
+                '}';
+    }
+
     @JsonProperty("Search")
     public List<MovieBasic> getSearch() {
         return search;
