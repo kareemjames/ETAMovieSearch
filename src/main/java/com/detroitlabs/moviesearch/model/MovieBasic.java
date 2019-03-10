@@ -3,6 +3,10 @@ package com.detroitlabs.moviesearch.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MovieBasic {
 
@@ -20,6 +24,12 @@ public class MovieBasic {
                 " ImdbID: " + imdbID +
                 " Type: " + type +
                 " Poster: " + poster;
+    }
+
+    public List<MovieBasic> sortMoviesByYear(List<MovieBasic> movieBasicList) {
+        Comparator.comparing(MovieBasic::getYear).thenComparing(MovieBasic::getYear);
+        Collections.sort(movieBasicList, Comparator.comparing(MovieBasic::getYear));
+        return movieBasicList;
     }
 
     @JsonProperty("Title")

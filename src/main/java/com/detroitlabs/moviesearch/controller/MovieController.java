@@ -26,9 +26,10 @@ public class MovieController {
 
     @RequestMapping("/")
     public String displayListOfMovies(ModelMap modelMap) {
+        MovieBasic movieBasic = new MovieBasic();
         Movie allMoviesObj = movieService.getAllMovies();
         List<MovieBasic> allMovies = allMoviesObj.getSearch();
-
+        allMovies = movieBasic.sortMoviesByYear(allMovies);
         modelMap.put("allMovies", allMovies);
         return "index";
     }
