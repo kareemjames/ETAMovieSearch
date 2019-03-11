@@ -3,6 +3,8 @@ package com.detroitlabs.moviesearch.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.List;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MovieDetails {
 
@@ -24,6 +26,7 @@ public class MovieDetails {
     private String imdbRating;
     private String imdbID;
     private String type;
+    private List<Rating> ratings;
 
     @Override
     public String toString() {
@@ -46,6 +49,7 @@ public class MovieDetails {
                 ", imdbRating='" + imdbRating + '\'' +
                 ", imdbID='" + imdbID + '\'' +
                 ", type='" + type + '\'' +
+                ", ratings=" + ratings +
                 '}';
     }
 
@@ -223,5 +227,13 @@ public class MovieDetails {
     @JsonProperty("Poster")
     public void setPoster(String poster) {
         this.poster = poster;
+    }
+
+    public List<Rating> getRatings() {
+        return ratings;
+    }
+
+    public void setRatings(List<Rating> ratings) {
+        this.ratings = ratings;
     }
 }
