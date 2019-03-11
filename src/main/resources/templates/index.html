@@ -61,9 +61,9 @@
                     <h2 th:text="${movie.title}">Movie Title</h2>
                     <p th:text="${movie.year}">Movie Year</p>
                     <form action="getTitle" method="get">
-                        <input type="hidden" name="title" th:value="${movie.title}"/>
+                        <input type="hidden" name="title" th:value="${movie.imdbID}"/>
                         <ul class="actions">
-                            <li><a th:text="${movie.title} + ' Details'" href="generic.html" class="button">Movie Details</a></li>
+                            <li><a th:text="${movie.title} + ' Details'" th:href="@{'/movie/' + ${movie.imdbID}}" class="button">Movie Details</a></li>
                         </ul>
                     </form>
                 </div>
