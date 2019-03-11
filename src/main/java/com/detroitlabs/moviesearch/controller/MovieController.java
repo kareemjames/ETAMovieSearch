@@ -37,13 +37,12 @@ public class MovieController {
         return "index";
     }
 
-    @ResponseBody
     @RequestMapping("/movie/{imdbId}")
     public String displayMovieDetails(@PathVariable String imdbId, ModelMap modelMap) {
         movieDetailsService.setImdbID(imdbId);
         MovieDetails movie = movieDetailsService.fetchMovieDetails();
         modelMap.put("movie", movie);
-        return movie.toString();
+        return "generic";
     }
 
     @RequestMapping("search")

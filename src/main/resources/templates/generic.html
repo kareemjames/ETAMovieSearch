@@ -4,27 +4,29 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html xmlns:th="http://www.w3.org/1999/xhtml">
-	<head>
-		<title>Generic - Hyperspace by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+	<title th:text="${movie.title}">Movie Title</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+	<link rel="stylesheet" href="assets/css/main.css"/>
+	<noscript>
+		<link rel="stylesheet" href="/static/assets/css/noscript.css"/>
+	</noscript>
+</head>
+<body class="is-preload">
 
-		<!-- Header -->
-			<header id="header">
-				<a href="index.html" class="title">Hyperspace</a>
-				<nav>
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="generic.html" class="active">Generic</a></li>
-						<li><a href="elements.html">Elements</a></li>
-					</ul>
-				</nav>
-			</header>
+<!-- Sidebar -->
+<section id="sidebar">
+	<div class="inner">
+		<nav>
+			<ul>
+				<li><a href="#intro">Welcome</a></li>
+				<li><a href="#one">Search Results</a></li>
+			</ul>
+		</nav>
+	</div>
+</section>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -32,10 +34,25 @@
 				<!-- Main -->
 					<section id="main" class="wrapper">
 						<div class="inner">
-							<h1 th:text="${movieDetails.name}" class="major">A Generic Page</h1>
-							<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+							<h1 th:text="${movie.title}" class="major">A Generic Page</h1>
+							<span class="image fit"><img th:src="@{${movie.poster}}" alt="movie poster" /></span>
+							<p th:text="${movie.title}">Title</p>
+							<p th:text="${movie.year}">Year</p>
+							<p th:text="${movie.rated}">Rated</p>
+							<p th:text="${movie.released}">Released</p>
+							<p th:text="${movie.runtime}">Runtime</p>
+							<p th:text="${movie.genre}">Genre</p>
+							<p th:text="${movie.director}">Director</p>
+							<p th:text="${movie.writer}">Writer</p>
+							<p th:text="${movie.actors}">Actors</p>
+							<p th:text="${movie.plot}">Plot</p>
+							<p th:text="${movie.language}">Language</p>
+							<p th:text="${movie.country}">Country</p>
+							<p th:text="${movie.awards}">Awards</p>
+							<p th:text="${movie.metascore}">MetaScore</p>
+							<p th:text="${movie.imdbRating}">Imdb Rating</p>
+							<p th:text="${movie.imdbID}">Imdb Id</p>
+							<p th:text="${movie.type}">Type</p>
 						</div>
 					</section>
 

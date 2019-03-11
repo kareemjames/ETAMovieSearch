@@ -24,6 +24,7 @@ public class MovieDetails {
     private String imdbRating;
     private String imdbID;
     private String type;
+    private String poster;
 
     @Override
     public String toString() {
@@ -212,5 +213,13 @@ public class MovieDetails {
     @JsonProperty("Type")
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getPoster() {
+        return poster;
+    }
+
+    public void setPoster(String poster) {
+        this.poster = poster;
     }
 }
