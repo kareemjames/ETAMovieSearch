@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MovieDetails {
 
-
     private String title;
     private String year;
     private String rated;
@@ -20,11 +19,11 @@ public class MovieDetails {
     private String language;
     private String country;
     private String awards;
+    private String poster;
     private String metascore;
     private String imdbRating;
     private String imdbID;
     private String type;
-    private String poster;
 
     @Override
     public String toString() {
@@ -42,6 +41,7 @@ public class MovieDetails {
                 ", language='" + language + '\'' +
                 ", country='" + country + '\'' +
                 ", awards='" + awards + '\'' +
+                ", poster='" + poster + '\'' +
                 ", metascore='" + metascore + '\'' +
                 ", imdbRating='" + imdbRating + '\'' +
                 ", imdbID='" + imdbID + '\'' +
@@ -215,10 +215,12 @@ public class MovieDetails {
         this.type = type;
     }
 
+    @JsonProperty("Poster")
     public String getPoster() {
         return poster;
     }
 
+    @JsonProperty("Poster")
     public void setPoster(String poster) {
         this.poster = poster;
     }
