@@ -1,5 +1,8 @@
 package com.detroitlabs.moviesearch.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 public class Rating {
 
     private String source;
@@ -13,6 +16,7 @@ public class Rating {
                 '}';
     }
 
+    @JsonProperty("Source")
     public String getSource() {
         return source;
     }
@@ -21,6 +25,7 @@ public class Rating {
         this.source = source;
     }
 
+    @JsonProperty("Value")
     public String getValue() {
         return value;
     }

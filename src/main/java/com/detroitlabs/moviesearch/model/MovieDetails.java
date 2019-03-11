@@ -229,10 +229,12 @@ public class MovieDetails {
         this.poster = poster;
     }
 
+    @JsonProperty("Ratings")
     public List<Rating> getRatings() {
         return ratings;
     }
 
+    @JsonProperty("Ratings")
     public void setRatings(List<Rating> ratings) {
         this.ratings = ratings;
     }

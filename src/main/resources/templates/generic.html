@@ -53,6 +53,9 @@
 							<p th:text="${movie.imdbRating}">Imdb Rating</p>
 							<p th:text="${movie.imdbID}">Imdb Id</p>
 							<p th:text="${movie.type}">Type</p>
+							<span th:each="rating : ${movie.ratings}">
+								<p th:text="${rating}"></p>
+							</span>
 						</div>
 					</section>
 
